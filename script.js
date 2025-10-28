@@ -531,3 +531,43 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// Gallery Modal Functions
+function openModal(imageSrc) {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    modal.style.display = 'block';
+    modalImage.src = imageSrc;
+    
+    // Set caption based on image source
+    const imageName = imageSrc.split('/').pop().split('.')[0];
+    modalCaption.textContent = imageName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('galleryModal');
+    modal.style.display = 'none';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+    const modal = document.getElementById('galleryModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});

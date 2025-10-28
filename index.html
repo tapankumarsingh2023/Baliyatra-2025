@@ -263,30 +263,51 @@
     <!-- History Section -->
     <section id="history" class="history">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Maritime History</h2>
-                <p class="section-subtitle">The Legacy of Odia Sailors</p>
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Maritime History</h2>
+                    <p class="section-subtitle">The Legacy of Odia Sailors</p>
+                </div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="history-image">
+                        <img src="images/transparent-trade.png" alt="Ancient Maritime Trade" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="history-text">
                         <h3>Ancient Times</h3>
-                        <p>Odisha's maritime trade with Southeast Asia began over 1000 years ago, with traders sailing to Bali, Java, and Sumatra.</p>
+                        <p>Odisha's maritime trade with Southeast Asia began over 1000 years ago, with traders sailing to Bali, Java, and Sumatra. These ancient mariners braved the treacherous waters of the Bay of Bengal, carrying with them not just goods but also the rich cultural heritage of Odisha.</p>
+                        <p>The maritime routes established by these traders became the foundation for cultural exchange between India and Southeast Asia, influencing art, architecture, and traditions across the region.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="history-image">
+                        <img src="images/kalinga-empare-baliyatra.png" alt="Kalinga Empire" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="history-text">
                         <h3>Kalinga Empire</h3>
-                        <p>The Kalinga Empire established extensive trade networks across the Indian Ocean, making Odisha a major maritime power.</p>
+                        <p>The Kalinga Empire established extensive trade networks across the Indian Ocean, making Odisha a major maritime power. This powerful kingdom controlled vast territories and maintained strong commercial relationships with distant lands.</p>
+                        <p>The empire's influence extended far beyond its borders, establishing Odisha as a center of maritime commerce and cultural exchange in ancient times.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="history-image">
+                        <img src="images/modern-baliyatra.png" alt="Modern Baliyatra" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="history-text">
                         <h3>Modern Era</h3>
-                        <p>Today, Baliyatra celebrates this rich heritage while promoting tourism and cultural exchange in modern Odisha.</p>
+                        <p>Today, Baliyatra celebrates this rich heritage while promoting tourism and cultural exchange in modern Odisha. The festival has evolved into a grand celebration that attracts millions of visitors from around the world.</p>
+                        <p>Modern Baliyatra serves as a bridge between the ancient maritime traditions and contemporary cultural expressions, keeping the legacy alive for future generations.</p>
                     </div>
                 </div>
             </div>
@@ -304,7 +325,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image-01.png')">
                         <img src="images/image-01.png" alt="Cultural Dance" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -312,7 +333,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image02.jpg')">
                         <img src="images/image02.jpg" alt="Traditional Boat" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -320,7 +341,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image03.jpg')">
                         <img src="images/image03.jpg" alt="Handicrafts" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -328,7 +349,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image04.jpg')">
                         <img src="images/image04.jpg" alt="Food Stalls" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -336,7 +357,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image05.jpg')">
                         <img src="images/image05.jpg" alt="Crowd Scene" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -344,7 +365,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openModal('images/image06.jpg')">
                         <img src="images/image06.jpg" alt="Fireworks" class="img-fluid rounded">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
@@ -355,6 +376,137 @@
         </div>
     </section>
 
+    <!-- Photo Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Gallery Image" class="modal-image">
+            <div class="modal-caption">
+                <p id="modalCaption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Latest Articles</h2>
+                    <p class="section-subtitle">Stay Updated with Baliyatra News & Stories</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card h-100 border-0 shadow">
+                        <div class="article-image">
+                            <img src="https://via.placeholder.com/400x250/DC2626/FFFFFF?text=Baliyatra+History" alt="Baliyatra History" class="card-img-top">
+                            <div class="article-category">History</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Ancient Maritime Heritage of Baliyatra</h5>
+                            <p class="card-text">Discover the fascinating history of Baliyatra and its connection to ancient maritime trade routes between Odisha and Southeast Asia.</p>
+                            <div class="article-meta d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-calendar me-1"></i> Nov 15, 2025</small>
+                                <small class="text-muted"><i class="fas fa-user me-1"></i> Admin</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card h-100 border-0 shadow">
+                        <div class="article-image">
+                            <img src="https://via.placeholder.com/400x250/DC2626/FFFFFF?text=Cultural+Events" alt="Cultural Events" class="card-img-top">
+                            <div class="article-category">Culture</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Performances at Baliyatra 2025</h5>
+                            <p class="card-text">Explore the rich cultural performances, traditional dances, and folk music that make Baliyatra a unique cultural celebration.</p>
+                            <div class="article-meta d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-calendar me-1"></i> Nov 12, 2025</small>
+                                <small class="text-muted"><i class="fas fa-user me-1"></i> Editor</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card article-card h-100 border-0 shadow">
+                        <div class="article-image">
+                            <img src="https://via.placeholder.com/400x250/DC2626/FFFFFF?text=Trade+Fair" alt="Trade Fair" class="card-img-top">
+                            <div class="article-category">Business</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Grand Trade Fair: A Business Perspective</h5>
+                            <p class="card-text">Learn about the business opportunities and economic impact of the world's second-largest trade fair at Baliyatra.</p>
+                            <div class="article-meta d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-calendar me-1"></i> Nov 10, 2025</small>
+                                <small class="text-muted"><i class="fas fa-user me-1"></i> Reporter</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Featured Videos</h2>
+                    <p class="section-subtitle">Watch Baliyatra Highlights & Documentaries</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-6">
+                    <div class="card video-card h-100 border-0 shadow">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/ZuFcAVyeAK4?si=WZyglt6eOWAbQKHA" 
+                                title="Baliyatra Documentary"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Baliyatra: A Journey Through Time</h5>
+                            <p class="card-text">A comprehensive documentary exploring the rich history and cultural significance of Baliyatra festival.</p>
+                            <div class="video-meta d-flex justify-content-between">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 15:30</small>
+                                <small class="text-muted"><i class="fas fa-eye me-1"></i> 25K views</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="card video-card h-100 border-0 shadow">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/Awl0pU-V4LU?si=cBzgp5-BWzORXWN_" 
+                                title="Cultural Performances"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Performances Highlights</h5>
+                            <p class="card-text">Watch the mesmerizing Odissi dance and traditional folk performances from Baliyatra 2025.</p>
+                            <div class="video-meta d-flex justify-content-between">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 8:45</small>
+                                <small class="text-muted"><i class="fas fa-eye me-1"></i> 18K views</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
