@@ -14,7 +14,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  S3_BUCKET: Baliyatra-2025-ag
+  S3_BUCKET: baliyatra-2025-ag
   CLOUDFRONT_DISTRIBUTION_ID: E3KGN2UHRUO5UY
 
 permissions:
