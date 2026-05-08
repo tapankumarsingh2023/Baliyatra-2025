@@ -14,8 +14,8 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  S3_BUCKET: your-bucket-name
-  CLOUDFRONT_DISTRIBUTION_ID: your-distribution-id
+  S3_BUCKET: Baliyatra-2025-ag
+  CLOUDFRONT_DISTRIBUTION_ID: E3KGN2UHRUO5UY
 
 permissions:
   id-token: write
@@ -25,29 +25,27 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 🔐 Configure AWS credentials (OIDC)
+      - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::111122223333:role/GitHubAction-AssumeRoleWithAction
+          role-to-assume: arn:aws:iam::498472303817:role/Githubs3CDN-limited-Access
           role-session-name: GitHub_to_AWS_via_OIDC
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: 👤 Verify identity
+      - name: Verify identity
         run: aws sts get-caller-identity
 
-      - name: 📤 Sync files to S3
+      - name: Sync files to S3
         run: |
           aws s3 sync . s3://${{ env.S3_BUCKET }} \
             --delete \
             --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude ".env*" \
-            --exclude "node_modules/*"
+            --exclude ".github/*"
 
-      - name: 🚀 Invalidate CloudFront (optional)
+      - name: Invalidate CloudFront (optional)
         if: ${{ github.event.inputs.invalidate_cache == 'true' }}
         run: |
           aws cloudfront create-invalidation \
